@@ -1,0 +1,207 @@
+/*
+    insert node
+    print in-order/pre-order/post-order
+    print leaf node
+    print one child node
+    search value
+    find maximum value (using while loop & recursion)
+    find minimum value 
+
+    (using while loop & recursion)
+    
+*/
+#include<bits/stdc++.h>
+using namespace std;
+
+struct node{
+    int data;
+    node *left = NULL;
+    node *right = NULL;
+};
+
+void insertNode(node *&r, int val){
+    if(r==NULL){
+        r=new node;
+        r->data = val;
+        return;
+    }
+    if(r->data > val){
+        insertNode(r->left, val);
+    }
+    else if(r->data < val){
+        insertNode(r->right, val);
+    }
+}
+
+void printInorder(node *r){
+    if(r==NULL){
+        return;
+    }
+    printInorder(r->left);
+    cout<<r->data<<" ";
+    printInorder(r->right);
+}
+
+void printPreOrder(node *r){
+    if(r==NULL){
+        return;
+    }
+    cout<<r->data<<" ";
+    printPreOrder(r->left);
+    printPreOrder(r->right);
+}
+
+void printPostOrder(node *r){
+    if(r==NULL){
+        return;
+    }
+    printPostOrder(r->left);
+    printPostOrder(r->right);
+    cout<<r->data<<" ";
+}
+
+void printLeafNode(node *r){
+    if(r==NULL){
+        return;
+    }
+    printLeafNode(r->left);
+    if(r->left==NULL && r->right==NULL){
+        cout<<r->data<<" ";
+    }
+    printLeafNode(r->right);
+}
+
+void printOneChildNode(node *r){
+    if(r==NULL){
+        return;
+    }
+    printOneChildNode(r->left);
+    if((r->left==NULL && r->right!=NULL)||(r->left!=NULL && r->right==NULL)){
+        cout<<r->data<<" ";
+    }
+    printOneChildNode(r->right);
+}
+
+bool searchNode(node *n, int val){
+    if(n==NULL){
+        return false;
+    }
+    if(n->data > val){
+        return searchNode(n->left,val);
+    }
+    if(n->data < val){
+        return searchNode(n->right,val);
+    }
+    if(n->data == val){
+        return true;
+    }
+    return true;
+}
+
+int countNode(node *r){
+    if(r==NULL){
+        return 0;
+    }
+    int left = countNode(r->left);
+    int right = countNode(r->right);
+    return left+right+1;
+}
+//-----find left & right successor with loop----------/
+
+int findMaxLoop(node *r){
+    if(r==NULL){
+        return INT_MAX;
+    }
+    while(r->right != NULL){
+        r = r->right;
+    }
+    return r->data;
+}
+
+int findMinLoop(node *r){
+    if(r==NULL){
+        return INT_MIN;
+    }
+    while(r->left != NULL){
+        r = r->left;
+    }
+    return r->data;
+}
+//-----find left & right successor with recursion----------/
+
+int findMin(node *r){
+    if(r==NULL){
+        return INT_MIN;
+    }
+    if(r->left == NULL){
+        return r->data;
+    }
+    else{
+        return findMin(r->left);
+    }
+}
+
+int findMax(node *r){
+    if(r==NULL){
+        return INT_MAX;
+    }
+    if(r->right == NULL){
+        return r->data;
+    }
+    else{
+        return findMax(r->right);
+    }
+}
+
+int main(){
+    node *root = NULL;
+    insertNode(root, 10);
+    insertNode(root, 15);
+    insertNode(root, 7);
+    insertNode(root, 13);
+
+    cout<<"In oprder: ";
+    printInorder(root);
+    cout<<endl;
+
+    cout<<"Pre oprder: ";
+    printPreOrder(root);
+    cout<<endl;
+
+    cout<<"Post oprder: ";
+    printPostOrder(root);
+    cout<<endl;
+
+    cout<<"Leaf Node: ";
+    printLeafNode(root);
+    cout<<endl;
+
+    cout<<"One child Node: ";
+    printOneChildNode(root);
+    cout<<endl;
+    cout<<"something";
+    cout<<findMaxLoop(root);
+    int val;
+    cout<<"Enter a number: "; cin>>val;
+    bool flag = searchNode(root,val);
+    if(flag==true){
+        cout<<"Found"<<endl;
+    }
+    else{
+        cout<<"Not Found"<<endl;
+    }
+    
+
+    cout<<"Total number of nodes: "<<countNode(root)<<endl;
+    if(root == NULL){
+        cout<<"BST is empty!!"<<endl;
+    }
+    else{
+        cout<<"Max val: "<<findMax(root)<<endl;
+        cout<<"Min val: "<<findMin(root)<<endl;
+    }
+    
+    //cout<<"int_min: "<<INT_MIN<<endl;
+    //cout<<"int_max: "<<INT_MAX<<endl;
+    return 0;
+}

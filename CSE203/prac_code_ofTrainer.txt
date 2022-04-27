@@ -1,0 +1,56 @@
+/*#include<iostream>
+using namespace std;
+void print(int n)
+{
+    if(n!=0){
+        
+        
+        print(n-1);
+        cout<<n<<" ";
+        
+    }
+    else
+        return;
+}
+int main()
+{
+    int n=5;
+    print(n);
+}
+*/
+/*
+#include<iostream>
+using namespace std;
+int sum(int n){
+    if(n==0) return 0;
+    return n+sum(n-1);
+}
+int main()
+{
+    int n;
+    cin>>n;
+    cout<<sum(n)<<endl;
+    return 0;
+}*/
+/*
+//--------Bismillahir Rahmanir Rahim----------/
+#include<iostream>
+using namespace std;
+void sh(int n){
+    if(n>2){
+        cout<<"1st "<<n<<"\n";
+        sh(n-1);
+        cout<<"2nd "<<n<<"\n";
+    }
+    else return;
+}
+int main()
+{
+    int n;
+    cin>>n;
+    sh(n);
+    
+    return 0;
+}*/
+
+

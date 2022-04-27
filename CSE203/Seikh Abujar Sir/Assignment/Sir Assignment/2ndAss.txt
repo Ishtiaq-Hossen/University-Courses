@@ -1,0 +1,64 @@
+#include<iostream>
+using namespace std;
+int main()
+{
+    int N,sum=0,min=0,max=0;
+    float avg=0;
+    cout<<"Our 1st Step Starts "<<endl<<endl;
+    cout<<"Enter a size ";
+    cin>>N;
+    const int n=N;
+    int arr[n];
+    for(int i=0;i<n;i++){
+        int temp;
+        cin>>temp;
+        if(temp%2==0){
+            arr[i]=temp;
+            sum+=temp;
+        }
+        else{
+            while(temp%2==1){
+                cout<<"Enter correct value\n";
+                cin>>temp;               
+            }
+             arr[i]=temp;
+             sum+=temp;
+        }
+
+    }
+    cout<<"Here is out 1st array "<<endl;
+    for(int i=0;i<n;i++){
+        cout<<arr[i]<<" ";
+    }
+    cout<<endl<<endl;
+    cout<<"Our 1st Step Ends "<<endl<<endl;
+    cout<<"Our 2nd Step Starts "<<endl<<endl;
+    int arr2[n],initial=0;
+    for(int i=(n-1);i>=0;i--){
+        arr2[i]=arr[initial];
+        initial++;
+    }
+    cout<<"Here is our reverse array "<<endl;
+    max=arr[0];
+    min=arr[0];
+    for(int i=0;i<n;i++){
+        cout<<arr2[i]<<" ";
+        if(max<arr[i]) max=arr[i];
+        if(min>arr[i]) min=arr[i];
+    }
+    cout<<endl<<endl;
+    cout<<"Our 2nd Step ends "<<endl<<endl;
+    cout<<"Our 3rd Step Starts "<<endl<<endl;
+    cout<<"Min "<<min<<" Max "<<max<<endl<<endl;
+    cout<<"Our 3rd Step ends "<<endl<<endl;
+    cout<<"Our 4th Step Starts "<<endl<<endl;
+    cout<<"Sum is "<<sum<<endl<<endl;
+    cout<<"Our 4th Step ends "<<endl<<endl;
+    cout<<"Our 5th Step Starts "<<endl<<endl;
+    avg=(float)sum/n;
+    cout<<"Mean is "<<avg<<endl<<endl;
+    cout<<"Our 5th Step ends "<<endl;
+  
+
+    return 0;
+}
