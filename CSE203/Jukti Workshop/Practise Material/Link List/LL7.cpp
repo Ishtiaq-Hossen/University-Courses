@@ -1,0 +1,87 @@
+#include<iostream>
+using namespace std;
+
+struct Node
+{
+    int data;
+    Node *next;
+};
+
+void insertNode(Node *&n, int d)
+{
+    Node *newNode = new Node;
+    newNode->data = d;
+    newNode->next = NULL;
+
+    if(n == NULL)
+        n = newNode;
+    else{
+        Node *tmp = n;
+
+        while(tmp->next != NULL)
+        {
+            tmp = tmp->next;
+        }
+        tmp->next = newNode;
+    }
+}
+
+void printList(Node *n)
+{
+    while(n != NULL)
+    {
+        cout << n->data << ", ";
+        n = n->next;
+    }
+    cout << endl;
+}
+
+Node* mergeList(Node *h1, Node *h2){
+    Node *h3 = NULL;
+    while(h1 !=NULL && h2!=NULL ){
+        if(h1->data < h2->data){
+            insertNode(h3,h1->data);
+            h1 = h1->next;
+        }
+        else{
+            insertNode(h3,h2->data);
+            h2 = h2->next;
+        }
+    }
+
+    while(h1!=NULL){
+        insertNode(h3,h1->data);
+        h1 = h1->next;
+    }
+
+    while(h2!=NULL){
+        insertNode(h3,h2->data);
+        h2 = h2->next;
+    }
+
+    return h3;
+}
+
+int main()
+{
+    Node *head1 = NULL;
+    insertNode(head1, 5);
+    insertNode(head1, 10);
+    insertNode(head1, 15);
+    insertNode(head1, 20);
+
+    Node *head2 = NULL;
+    insertNode(head2, 1);
+    insertNode(head2, 3);
+    insertNode(head2, 25);
+
+    cout<<"Linked list 1: ";
+    printList(head1);
+    cout<<"Linked list 2: ";
+    printList(head2);
+
+    Node *h3 = mergeList(head1,head2);
+    cout<<"Linked list 3: ";
+    printList(h3);
+}
+

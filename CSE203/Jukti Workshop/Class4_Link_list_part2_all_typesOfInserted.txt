@@ -1,0 +1,130 @@
+#include<iostream>
+using namespace std;
+
+struct Node
+{
+    int data;
+    Node *next;
+};
+
+void insertAtFront(Node *&head, int val)
+{
+    Node *n = new Node;
+    n->data = val;
+    n->next = NULL;
+
+    if(head == NULL)
+    {
+        head = n;
+    }
+    else
+    {
+        n->next = head;
+        head = n;
+    }
+}
+
+void insertAtLast(Node *&head, int val)
+{
+    Node *n = new Node;
+    n->data = val;
+    n->next = NULL;
+
+    if(head == NULL)
+    {
+        head = n;
+    }
+    else
+    {
+        Node *tmp = head;
+        while(tmp->next != NULL)//this loop is going to the last data.
+        {
+            tmp = tmp->next;
+        }
+        tmp->next = n;
+    }
+}
+
+void print(Node *head)
+{
+    Node *tmp;
+    tmp=head;
+    while(tmp != NULL)
+    {
+        cout<<tmp->data;
+
+        if(tmp->next != NULL)
+        {
+            cout<<" -> ";
+        }
+
+        tmp = tmp->next;
+    }
+    cout<<endl;
+}
+
+void insertAtGivenPos(Node *&head, int val, int pos)
+{
+    Node *n = new Node;
+    n->data = val;
+    n->next = NULL;
+    if(pos == 1)
+    {
+        n->next = head;
+        head = n;
+    }
+    else
+    {
+        Node *tmp = head;
+        int i=1;
+        while(i < (pos-1) && (tmp->next != NULL))
+        {
+            tmp = tmp->next;
+            i++;
+        }
+        n->next = tmp->next;
+        tmp->next = n;
+    }
+}
+
+int main()
+{
+    Node *head = NULL;
+    /*insertAtFront(head, 34);
+    insertAtFront(head, 35);
+    insertAtFront(head, 36);
+    insertAtFront(head, 37);
+    */
+    /*   int n,i;
+       cout<<"Enter 0 to exit."<<endl;
+       cout<<"Enter 1 to insert at last."<<endl;
+       cout<<"Enter 2 to print."<<endl;
+
+       do{
+           cout<<"Enter your choice: ";
+           cin>>i;
+           if(i == 1){
+               cout<<"Enter a value: "; cin>>n;
+               insertAtLast(head, n);
+           }
+           else if(i == 2){
+               print(head);
+           }
+           else if(i != 0){
+               cout<<"Try again!"<<endl;
+           }
+
+       }while(i != 0);
+
+    */
+
+    insertAtLast(head, 35);
+    insertAtLast(head, 36);
+    insertAtLast(head, 37);
+    print(head);
+
+    insertAtGivenPos(head, 44, 3);
+    print(head);
+
+}
+

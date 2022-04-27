@@ -1,0 +1,249 @@
+
+//in this class we will learn how to delete a node in bst
+
+#include<bits/stdc++.h>
+using namespace std;
+
+struct node{
+    int data;
+    node *left = NULL;
+    node *right = NULL;
+};
+
+void insertNode(node *&r, int val){
+    if(r==NULL){
+        r=new node;
+        r->data = val;
+        return;
+    }
+    if(r->data > val){
+        insertNode(r->left, val);
+    }
+    else if(r->data < val){
+        insertNode(r->right, val);
+    }
+}
+
+void printInorder(node *r){
+    if(r==NULL){
+        return;
+    }
+    printInorder(r->left);
+    cout<<r->data<<" ";
+    printInorder(r->right);
+}
+
+void printPreOrder(node *r){
+    if(r==NULL){
+        return;
+    }
+    cout<<r->data<<" ";
+    printInorder(r->left);
+    printInorder(r->right);
+}
+
+void printPostOrder(node *r){
+    if(r==NULL){
+        return;
+    }
+    printInorder(r->left);
+    printInorder(r->right);
+    cout<<r->data<<" ";
+}
+
+void printLeafNode(node *r){
+    if(r==NULL){
+        return;
+    }
+    printLeafNode(r->left);
+    if(r->left==NULL && r->right==NULL){
+        cout<<r->data<<" ";
+    }
+    printLeafNode(r->right);
+}
+
+void printOneChildNode(node *r){
+    if(r==NULL){
+        return;
+    }
+    printOneChildNode(r->left);
+    if((r->left==NULL && r->right!=NULL)||(r->left!=NULL && r->right==NULL)){
+        cout<<r->data<<" ";
+    }
+    printOneChildNode(r->right);
+}
+
+bool searchNode(node *n, int val){
+    if(n==NULL){
+        return false;
+    }
+    if(n->data > val){
+        return searchNode(n->left,val);
+    }
+    if(n->data < val){
+        return searchNode(n->right,val);
+    }
+    if(n->data == val){
+        return true;
+    }
+}
+
+int countNode(node *r){
+    if(r==NULL){
+        return 0;
+    }
+    int left = countNode(r->left);
+    int right = countNode(r->right);
+    return left+right+1;
+}
+
+int findMaxLoop(node *r){
+    if(r==NULL){
+        return INT_MAX;
+    }
+    while(r->right != NULL){
+        r = r->right;
+    }
+    return r->data;
+}
+
+int findMinLoop(node *r){
+    if(r==NULL){
+        return INT_MIN;
+    }
+    while(r->left != NULL){
+        r = r->left;
+    }
+    return r->data;
+}
+
+int findMin(node *r){
+    if(r==NULL){
+        return INT_MIN;
+    }
+    if(r->left == NULL){
+        return r->data;
+    }
+    else{
+        return findMin(r->left);
+    }
+}
+
+int findMax(node *r){
+    if(r==NULL){
+        return INT_MAX;
+    }
+    if(r->right == NULL){
+        return r->data;
+    }
+    else{
+        return findMax(r->right);
+    }
+}
+
+void DeleteNode(node *&n, int d){
+    if(n==NULL) return;
+    else if(d < n->data){
+        DeleteNode(n->left, d);
+    }
+    else if(d > n->data){
+        DeleteNode(n->right, d);
+    }
+    else if(d == n->data){
+        //Case 1: No child, leaf node
+         if(n->left==NULL && n->right == NULL){
+            n = NULL;
+         }
+         //Case 2: One child at right
+         else if(n->left == NULL && n->right != NULL){
+            node *t = n;
+            n = n->right;
+            delete t;
+         }
+         //Case 3: One child at left
+         else if(n->right == NULL){
+            node *t = n;
+            n = n->left;
+            delete t;
+         }
+         //Case 4: two child
+         else{
+            int maxVal = findMax(n->left);
+            n->data = maxVal;
+            DeleteNode(n->left, maxVal);
+            /*
+            int minVal = findMin(n->right);
+            n->data = minVal;
+            DeleteNode(n->right, minVal);
+            */
+         }
+    }
+}
+
+int main(){
+    node *root = NULL;
+    insertNode(root, 10);
+    insertNode(root, 15);
+    insertNode(root, 7);
+    insertNode(root, 13);
+
+    cout<<"Before Delete: ";
+    printInorder(root);
+    cout<<endl;
+
+    DeleteNode(root, 10);
+
+    cout<<"After Delete: ";
+    printInorder(root);
+    cout<<endl;
+
+
+/*
+    cout<<"Pre oprder: ";
+    printPreOrder(root);
+    cout<<endl;
+
+    cout<<"Post oprder: ";
+    printPostOrder(root);
+    cout<<endl;
+
+    cout<<"Leaf Node: ";
+    printLeafNode(root);
+    cout<<endl;
+
+    cout<<"One child Node: ";
+    printOneChildNode(root);
+    cout<<endl;
+
+    int val;
+    cout<<"Enter a number: "; cin>>val;
+    bool flag = searchNode(root,val);
+    if(flag==true){
+        cout<<"Found"<<endl;
+    }
+    else{
+        cout<<"Not Found"<<endl;
+    }
+
+
+    cout<<"Total number of nodes: "<<countNode(root)<<endl;
+    if(root == NULL){
+        cout<<"BST is empty!!"<<endl;
+    }
+    else{
+        cout<<"Max val: "<<findMax(root)<<endl;
+        cout<<"Min val: "<<findMin(root)<<endl;
+    }
+    //cout<<"int_min: "<<INT_MIN<<endl;
+    //cout<<"int_max: "<<INT_MAX<<endl;
+    */
+
+    return 0;
+}
+
+
+
+
+
+
+

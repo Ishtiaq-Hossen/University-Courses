@@ -1,0 +1,102 @@
+#include<iostream>
+using namespace std;
+
+struct Node
+{
+    int data;
+    Node *next;
+};
+
+void insertNode(Node *&n, int d)
+{
+    Node *newNode = new Node;
+    newNode->data = d;
+    newNode->next = NULL;
+
+    if(n == NULL)
+        n = newNode;
+    else{
+        Node *tmp = n;
+
+        while(tmp->next != NULL)
+        {
+            tmp = tmp->next;
+        }
+        tmp->next = newNode;
+    }
+}
+
+void printList(Node *n)
+{
+    while(n != NULL)
+    {
+        cout << n->data << ", ";
+        n = n->next;
+    }
+    cout << endl;
+}
+
+void deleteFront(Node *&head){
+    if(head==NULL){
+        return;
+    }
+    Node *tmp = head;
+    head = head->next;
+    delete tmp;
+}
+
+void deleteEnd(Node *&head){
+    if(head==NULL){
+        return;
+    }
+    Node *tmp = head;
+    Node *prv = head;
+    while(tmp->next != NULL){
+        prv = tmp;
+        tmp = tmp->next;
+    }
+    prv->next = NULL;
+    delete tmp;
+}
+
+void deleteNode(Node *&head, int val){
+    Node *prv = head;
+    Node *tmp = head;
+
+    while(tmp !=NULL){
+        if(tmp->data == val){
+            if(tmp == head){
+                head = head->next;
+            }
+            else{
+                prv->next = tmp->next;
+            }
+            delete tmp;
+            return;
+        }
+        else{
+            prv = tmp;
+            tmp = tmp->next;
+        }
+    }
+}
+
+int main()
+{
+    Node *head = NULL;
+    insertNode(head, 5);
+    insertNode(head, 10);
+    insertNode(head, 15);
+    insertNode(head, 20);
+    insertNode(head, 25);
+
+    printList(head);
+
+    //deleteEnd(head);
+    //deleteFront(head);
+    deleteNode(head, 5);
+
+    printList(head);
+
+}
+

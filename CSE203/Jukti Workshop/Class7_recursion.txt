@@ -1,0 +1,84 @@
+//------normal recursion-------/
+
+/*
+
+//-----question----------------/
+5. Write a program in C to count the digits of a given number using recursion. Go to the editor
+Test Data :
+Input a number : 50
+Expected Output :
+
+The number of digits in the number is :  2
+Click me to see the solution
+
+6. Write a program in C to find the sum of digits of a number using recursion. Go to the editor
+Test Data :
+Input any number to find sum of digits: 25
+Expected Output :
+
+The Sum of digits of 25 = 7 
+
+7. Write a program in C to find GCD of two numbers using recursion. Go to the editor
+Test Data :
+Input 1st number: 10
+Input 2nd number: 50
+Expected Output :
+
+The GCD of 10 and 50 is: 10 
+*/
+
+//-----here is the first code of basic recursion-----------/
+
+#include<iostream>
+using namespace std;
+
+void print(int n){
+    if(n==0) return;
+    //cout<<n<<" ";
+    print(n-1);
+    cout<<n<<" ";
+}
+
+int main(){
+    int n=5;
+    cout<<"Loop: ";
+    for(int i=1; i<=n; i++){
+        cout<<i<<" ";
+    }
+    cout<<endl<<"Recursion: ";
+    print(n);
+}
+//---------second code with question answer----------/
+//-----digit sum and factorial code with recursion-----/
+//-----lastly a chllange that main() function is also recursive-----/
+
+#include<iostream>
+using namespace std;
+
+int sum(int n){
+    if(n==0) return 0;
+    return n+sum(n-1);
+}
+
+int fac(int n){
+    if(n==0) return 1;
+    return n*fac(n-1);
+}
+
+int main(){
+    int n=5;
+    cout<<"Sum = "<<sum(n)<<endl;
+    cout<<n<<"! = "<<fac(n)<<endl;
+    /*cout<<"Enter a number: ";
+    cin>>n;
+    if(n==0) return 0;
+    main();*/
+}
+
+//---------date 10 October 2021---------/
+
+
+
+
+
+

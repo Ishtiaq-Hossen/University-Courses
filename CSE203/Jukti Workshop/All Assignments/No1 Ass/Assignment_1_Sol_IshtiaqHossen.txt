@@ -1,0 +1,107 @@
+
+//Bismillahir Rahmanir Rahim
+
+//----------------Pass by value -----------/
+
+#include<iostream>
+using namespace std;
+void swapVal(int a,int b){
+
+    //Value exchanging
+    a=a+b;
+    b=a-b;
+    a=a-b;
+    //printing
+    cout<<"After swaping in function"<<endl;
+    cout<<"a "<<a<<"\tb "<<b<<endl;
+
+}
+
+
+int main(){
+
+    int a,b;
+    cin>>a>>b;
+
+    cout<<"a "<<a<<"\tb "<<b<<endl;
+    
+    swapVal(a,b); //Function call       
+    cout<<"Final Output"<<endl;
+    cout<<"a "<<a<<"\tb "<<b<<endl;
+
+    return 0;
+            
+
+
+}
+
+
+//-------------------Pass by reference ---------/
+
+#include<iostream>
+using namespace std;
+void swapVal(int &a,int &b){
+
+    //Value exchanging
+    a=a+b;
+    b=a-b;
+    a=a-b;
+    //printing
+    cout<<"After swaping in function"<<endl;
+    cout<<"a "<<a<<"\tb "<<b<<endl;
+
+}
+
+
+int main(){
+
+    int a,b;
+    cin>>a>>b;
+
+    cout<<"a "<<a<<"\tb "<<b<<endl;
+    
+    swapVal(a,b); //Function call       
+    cout<<"Final Output"<<endl;
+    cout<<"a "<<a<<"\tb "<<b<<endl;
+
+    return 0;
+            
+
+
+}
+
+//-------------pass by address-----/
+
+#include<iostream>
+using namespace std;
+void swapVal(int *a,int *b){
+
+    //Value exchanging
+    *a=*a+*b;
+    *b=*a-*b;
+    *a=*a-*b;
+    //printing
+    cout<<"After swaping in function"<<endl;
+    cout<<"a "<<*a<<"\tb "<<*b<<endl;
+
+}
+
+
+int main(){
+
+    int a,b;
+    cin>>a>>b;
+
+    cout<<"a "<<a<<"\tb "<<b<<endl;
+    
+    swapVal(&a,&b); //Function call       
+    cout<<"Final Output"<<endl;
+    cout<<"a "<<a<<"\tb "<<b<<endl;
+
+    return 0;
+            
+
+
+}
+
+

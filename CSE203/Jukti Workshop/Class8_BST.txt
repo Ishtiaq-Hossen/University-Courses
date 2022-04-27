@@ -1,0 +1,126 @@
+//--------detail BST------------/
+//-----concept bst insert,print(inorder,preorder,postorder),print leafnode-------/
+#include<bits/stdc++.h>
+using namespace std;
+
+struct node{
+    int data;
+    node *left = NULL;
+    node *right = NULL;
+};
+
+void insertNode(node *&r, int val){
+    if(r==NULL){
+        r=new node;
+        r->data = val;
+        return;
+    }
+    if(r->data > val){
+        insertNode(r->left, val);
+    }
+    else if(r->data < val){
+        insertNode(r->right, val);
+    }
+}
+
+void printInorder(node *r){
+    if(r==NULL){
+        return;
+    }
+    printInorder(r->left);
+    cout<<r->data<<" ";
+    printInorder(r->right);
+}
+
+void printPreOrder(node *r){
+    if(r==NULL){
+        return;
+    }
+    cout<<r->data<<" ";
+    printPreOrder(r->left);
+    printPreOrder(r->right);
+}
+
+void printPostOrder(node *r){
+    if(r==NULL){
+        return;
+    }
+    printPostOrder(r->left);
+    printPostOrder(r->right);
+    cout<<r->data<<" ";
+}
+
+void printLeafNode(node *r){
+    if(r==NULL){
+        return;
+    }
+    printLeafNode(r->left);
+    if(r->left==NULL && r->right==NULL){
+        cout<<r->data<<" ";
+    }
+    printLeafNode(r->right);
+}
+void levelorder(node *root)
+{
+    if(root==NULL)return ;
+    queue<node*>q;
+    q.push(root);
+    while(!q.empty())
+    {
+        node* current=q.front();
+        cout<<current->data<<" ";
+        if(current->left!=NULL)q.push(current->left);
+        if(current->right!=NULL)q.push(current->right);
+        q.pop();
+    }
+}
+int main(){
+    node *root = NULL;
+    insertNode(root, 10);
+    insertNode(root, 5);
+    insertNode(root, 15);
+    insertNode(root, 7);
+    insertNode(root, 13);
+    /*
+
+    <-----BST tree-->
+
+           |10|
+           /  \
+        |5|    |15|
+       /  \     |  \ 
+      /    \    |   \
+   |NULL| |7|  |13| |NULL|
+
+    */
+
+    cout<<"Level order: ";
+    levelorder(root);
+    cout<<endl;
+
+    cout<<"In oprder: ";
+    printInorder(root);
+    cout<<endl;
+
+    cout<<"Pre oprder: ";
+    printPreOrder(root);
+    cout<<endl;
+
+    cout<<"Post oprder: ";
+    printPostOrder(root);
+    cout<<endl;
+
+    cout<<"Leaf Node: ";
+    printLeafNode(root);
+    cout<<endl;
+
+    return 0;
+}
+
+
+//------------date 15 October 2021---------/
+
+//https://cs.stackexchange.com/questions/32397/is-there-a-difference-between-perfect-full-and-complete-tree
+
+
+

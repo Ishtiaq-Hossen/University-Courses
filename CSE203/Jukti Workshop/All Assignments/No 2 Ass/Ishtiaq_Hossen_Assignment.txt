@@ -1,0 +1,114 @@
+//-------Bismillahir Rahmanir Rahim---------/
+
+//--------Answer for the question no 1------/
+/*
+#include<iostream>
+#include<string.h>
+using namespace std;
+int main()
+{
+    //freopen("input.txt","r",stdin);
+    //----------initialization ---/
+    int numOfWeek= 4,el=0,arr[numOfWeek];
+    string **food=new string*[numOfWeek];
+
+    //------This loop is for taking input in this 2D array--/
+
+    for(int i=0;i<numOfWeek;i++){
+
+        //---Taking input for 2D array column-/
+        cout<<"Enter the number of food you will take "<<i+1<<" no Week ";
+        cin>>el;
+        cout<<endl;
+        arr[i]=el;
+        food[i]=new string[el];
+
+        //---Taking input for 2D array element-/
+
+        cout<<"Enter the food items name for "<<i+1<<" no Week ";
+        cin.ignore();
+        for(int j=0;j<arr[i];j++){
+
+            getline(cin,food[i][j]);
+
+        }
+    }
+    cout<<endl;
+    //Printing week wise food items name
+
+    for(int i=0;i<numOfWeek;i++){
+        cout<<i+1<<" No Week food items ";
+        for(int j=0;j<arr[i];j++){
+            if(j<arr[i]-1)
+                cout<<food[i][j]<<",";
+            else
+                cout<<food[i][j];
+        }
+        cout<<endl;
+    }
+
+    delete[] food;
+    return 0;
+}
+
+//----------Answer for question no 2--------//
+#include<iostream>
+#include<string>
+#include <cstdlib>
+using namespace std;
+//---declaring a struct----/
+
+struct Friend{
+    string name;
+    string phoneNumber;
+    int numOfMutualFriend;
+    bool hasAnyPet;
+};
+int main()
+{
+    //freopen("input.txt","r",stdin);
+    //-------initializing----/
+    int numOfFriend=0;
+
+    //-----taking input of friends number-/
+    cout<<"Enter the number of friend ";
+    cin>>numOfFriend;
+
+    //----initializing struct 1D Dynamic array----/
+    Friend* friend_list =new Friend [numOfFriend];
+    cout<<"#----Now Please give us Proper Data-----#"<<endl;
+
+    //----taking input for friends data-----/
+    for(int i=0;i<numOfFriend;i++){
+        cout<<"Enter "<<i+1<<" no friends name ";
+        cin.ignore();
+        getline(cin,friend_list[i].name);
+        cout<<"Enter "<<i+1<<" no friends Phone Number ";
+        cin>>friend_list[i].phoneNumber;
+        cout<<"How many matual friends both of you have ";
+        cin>>friend_list[i].numOfMutualFriend;
+        cout<<"Put 0/1\n0=has no pet\n1=has pet\n\n";
+        cin>>friend_list[i].hasAnyPet;
+        cout<<"\n\n";
+    }
+    cout<<"-------------#-------------"<<endl;
+
+    //----printing friends information numberwise-----/
+    for(int i=0;i<numOfFriend;i++){
+        cout<<i+1<<" no friends information \n";
+        cout<<"Name: ";
+        cout<<friend_list[i].name<<endl;
+        cout<<"Phone Number: ";
+        cout<<friend_list[i].phoneNumber<<endl;
+        cout<<"Matual friends number: ";
+        cout<<friend_list[i].numOfMutualFriend<<endl;
+        if(friend_list[i].hasAnyPet==1)
+        {cout<<"He has pet\n\n";}
+        else
+        {cout<<"He has no pet\n\n";}
+        
+    }
+    delete[] friend_list;
+    return 0;
+}
+*/

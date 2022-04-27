@@ -1,0 +1,82 @@
+#include<iostream>
+using namespace std;
+
+struct Node{
+    int data;
+    Node *next;
+};
+
+int main(){
+    Node *a = new Node;
+    Node *b = new Node;
+    Node *c = new Node;
+
+    a->data = 5;
+    a->next = NULL;
+
+    b->data =3;
+    b->next = NULL;
+
+    c->data =3;
+    c->next = NULL;
+
+    a->next = b;
+    b->next = c;
+
+    /*int a = 12;
+    int *pt = &a;
+    */
+
+    cout<<"&b : "<<b<<endl;
+    cout<<"a->next : "<<a->next<<endl;
+
+    cout<<"a: "<<a->data<<endl;
+    cout<<"b: "<<b->data<<endl;
+    cout<<"a->next->data: "<<a->next->data<<endl;
+
+    return 0;
+}
+
+-------------------------------------------------------------
+
+#include<iostream>
+using namespace std;
+
+struct Node{
+    int data;
+    Node *next;
+};
+
+void insertAtFront(Node *&head, int val){
+    Node *n = new Node;
+    n->data = val;
+    n->next = NULL;
+
+    if(head == NULL){
+        head = n;
+    }
+    else{
+        n->next = head;
+        head = n;
+    }
+}
+
+void print(Node *head){
+    Node *tmp;
+    tmp=head;
+    while(tmp != NULL){
+        cout<<tmp->data<<" -> ";
+        tmp = tmp->next;
+    }
+}
+
+int main(){
+    Node *head = NULL;
+    insertAtFront(head, 34);
+    insertAtFront(head, 35);
+    insertAtFront(head, 36);
+    insertAtFront(head, 37);
+
+    print(head);
+
+}

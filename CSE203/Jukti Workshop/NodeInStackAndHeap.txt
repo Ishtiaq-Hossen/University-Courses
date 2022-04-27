@@ -1,0 +1,7 @@
+Node a; 
+a.data = 5; 
+a.next = NULL; 
+Node *n = &a; 
+cout<<"n->data: "<<n->data<<endl;//value of stack 
+cout<<"&a: "<<&a<<endl;//address of stack 
+cout<<"n: "<<n<<endl; 

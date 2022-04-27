@@ -1,0 +1,111 @@
+===================== 1D Dynamic Array ===================
+
+#include<iostream>
+using namespace std;
+int main(){
+    int n = 5;
+    int *arr = new int[n];
+
+    cout<<"Enter "<<n<<" elements: ";
+    for(int j=0; j<5; j++){
+        cin>>arr[j];
+    }
+
+    cout<<"Array: ";
+    for(int j=0; j<5; j++){
+        cout<<arr[j]<<"    ";
+    }
+    cout<<endl;
+}
+
+===================== Delete front from 1D dynamic Array ===================
+
+#include<iostream>
+using namespace std;
+
+
+int main(){
+    int n=5;
+    int *pt = new int[n];
+
+    cout<<"Enter "<<n<<" elements: ";
+    for(int j=0; j<n; j++){
+        cin>>pt[j];
+    }
+
+    for(int j=0; j<n; j++){
+        cout<<pt[j]<<"  ";
+    }
+    cout<<endl;
+
+    int *pt1 = new int[n-1];
+
+    for(int j=0; j<(n-1); j++){
+        pt1[j] = pt[j+1];
+    }
+
+    cout<<"After deleting the first element."<<endl;
+    for(int j=0; j<(n-1); j++){
+        cout<<pt1[j]<<"  ";
+    }
+    cout<<endl;
+
+    delete [] pt;
+}
+
+
+====================== 2D dynamic array =====================
+
+#include <iostream>
+using namespace std;
+
+
+int main()
+{
+    int n = 3;
+
+    int **arr = new int*[n];
+    /*
+    int el;
+    cin>>el;
+    int a[n];
+
+    arr[0] = new int[el];
+    a[0] = el;
+
+    cin>>el;
+    arr[1] = new int[el];
+    a[1] = el;
+
+    arr[2] = new int[1];
+    */
+
+    int el;
+    int a[n];
+    for(int i=0; i<n; i++){
+        cout<<"Enter the element number in row "<<i+1<<" : ";
+        cin>>el;
+        a[i] = el;
+        arr[i] = new int[el];
+    }
+
+    for(int i=0; i<n; i++){
+        cout<<"Enter "<<a[i]<<" elements in row "<<i+1<<" : ";
+
+        for(int j=0; j<a[i]; j++){
+            cin>>arr[i][j];
+        }
+    }
+
+    cout<<endl<<"2D array: "<<endl;
+    for(int i=0; i<n; i++){
+        cout<<"Row "<<i+1<<": ";
+        for(int j=0; j<a[i]; j++){
+            cout<<arr[i][j]<<" ";
+        }
+        cout<<endl;
+    }
+
+    return 0;
+}
+

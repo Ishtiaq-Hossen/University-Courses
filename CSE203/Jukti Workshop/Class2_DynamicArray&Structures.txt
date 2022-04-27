@@ -1,0 +1,185 @@
+******************** All info of students in 1D array ****************
+
+#include<iostream>
+using namespace std;
+
+/*
+int main(){
+    int n = 5;
+
+    int id[n] = {11,22,33,44,55};
+    string name[n] = {"Aa","Bb","Cc","Dd","Ee"};
+    float cgpa[n] = {1.11,2.22,3,4,5};
+
+    cout<<"Students ID array: ";
+    for(int i=0; i<n; i++){
+        cout<<id[i]<<"  ";
+    }
+    cout<<endl;
+
+    int inputID;
+    cout<<"Enter an id number: "; cin>>inputID;
+
+    int ind = -111;
+    for(int i=0; i<n; i++){
+        if(id[i] == inputID){
+            ind = i;
+        }
+    }
+
+    if(ind == -111){
+        cout<<"Invalid student ID."<<endl;
+    }
+    else{
+        cout<<"Student Info:"<<endl;
+        cout<<"ID: "<<id[ind]<<endl;
+        cout<<"Name: "<<name[ind]<<endl;
+        cout<<"cgpa: "<<cgpa[ind]<<endl;
+   }
+
+    return 0;
+}
+*/
+
+int main(){
+    int n = 5;
+
+    int id[n] = {11,22,33,44,55};
+    string name[n] = {"Aa","Bb","Cc","Dd","Ee"};
+    float cgpa[n] = {1.11,2.22,3,4,5};
+
+    cout<<"Students ID array: ";
+    for(int i=0; i<n; i++){
+        cout<<id[i]<<"  ";
+    }
+    cout<<endl;
+
+    int inputID;
+    cout<<"Enter an id number: "; cin>>inputID;
+
+    bool ind = false;
+    for(int i=0; i<n; i++){
+        if(id[i] == inputID){
+            ind = true;
+            cout<<"Student Info:"<<endl;
+            cout<<"ID: "<<id[ind]<<endl;
+            cout<<"Name: "<<name[ind]<<endl;
+            cout<<"cgpa: "<<cgpa[ind]<<endl;
+        }
+    }
+
+    if(ind == false){
+        cout<<"Invalid student ID."<<endl;
+    }
+
+    return 0;
+}
+
+
+************ User defined data type(Structure) ************
+#include<iostream>
+using namespace std;
+
+struct Student{
+    int id;
+    string name;
+    float cgpa;
+};
+
+int main(){
+    int a;
+    a = 3;
+
+    Student st;
+    cout<<"Enter id:";
+    cin>>st.id;
+
+    cout<<"Enter name: ";
+    //cin>>st.name;
+
+    cin.ignore();
+    getline(cin,st.name);
+
+    cout<<"Enter cgpa:";
+    cin>>st.cgpa;
+
+    cout<<"Student info:"<<endl<<"ID: "<<st.id<<endl;
+    cout<<"Name: "<<st.name<<endl;
+    cout<<"cgpa: "<<st.cgpa<<endl;
+}
+
+
+************ student data type array ***********
+#include<iostream>
+using namespace std;
+
+struct Student{
+    int id;
+    string name;
+    float cgpa;
+
+    /*int getID(){
+        return id;
+    }
+    void setID(int id, string n){
+        this.id = id;
+        name = n;
+    }*/
+};
+
+int main(){
+    int n = 3;
+    //int arr[n];
+    Student st[n];
+
+    for(int i=0; i<n; i++){
+        cout<<"Enter Student data:"<<endl;
+        cout<<"ID: "; cin>>st[i].id;
+        cin.ignore();
+        cout<<"Name: "; getline(cin,st[i].name);
+        cout<<"cgpa: "; cin>>st[i].cgpa;
+    }
+
+    cout<<"All Student info:"<<endl;
+    for(int i=0; i<n; i++){
+
+        cout<<"ID: "<<st[i].id<<endl;
+        cout<<"Name: "<<st[i].name<<endl;
+        cout<<"cgpa: "<<st[i].cgpa<<endl<<endl;
+    }
+
+    //int ID = st.getID();
+}
+
+************** Pointer to structure **************
+#include<iostream>
+using namespace std;
+
+struct Student{
+    int id;
+    string name;
+    float cgpa;
+};
+
+int main(){
+    //int *a = new int;
+    //cin>>*a;
+
+    Student *st = new Student;
+    cout<<"Enter Student data:"<<endl;
+
+    cout<<"ID: "; cin>> st->id; //(*st).id;
+    cin.ignore();
+    cout<<"Name: "; getline(cin, st->name);//(*st).name);
+    cout<<"cgpa: "; cin>>(*st).cgpa;
+
+    cout<<endl<<"Student info"<<endl<<"ID: "<<(*st).id<<endl;
+    cout<<"Name: "<<(*st).name<<endl;
+    cout<<"cgpa: "<<(*st).cgpa<<endl<<endl;
+
+    delete st;
+
+    cout<<endl<<"Student info"<<endl<<"ID: "<<(*st).id<<endl;
+    cout<<"Name: "<<(*st).name<<endl;
+    cout<<"cgpa: "<<(*st).cgpa<<endl<<endl;
+}
