@@ -1,3 +1,11 @@
+// 3 way merge sort implementation--------/
+/*
+    ->merge sort follows divide and conqueuer algorithm 
+    ->space complexity O ( n ) 
+    ->time complexity O(nlogn)
+    ->it's stable (can handle duplicate number)
+    ->Can't handle negative numbers
+*/
 #include <bits/stdc++.h>
 using namespace std;
 void merge(int A[], int p, int q, int r)
