@@ -30,6 +30,13 @@ using namespace std;
     Max_heapify(A, 1)
 
 */
+
+/*
+    ->Heap sort isn't stable
+    ->Heap sort uses a heap data structure to efficiently sort its elements.
+        You can think of heap sort as selection sort with a priority queue.
+    ->
+*/
 void MAX_heapify(int A[], int n, int i) {
 
     int l = 2 * i + 1;
