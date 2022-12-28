@@ -1,0 +1,16 @@
+What is Abstraction?
+->Astraction is the process of hiding the inplementation details
+and showing only the functionality to the user.
+
+
+if there is any pure virtual function in class 
+then the class would be a abstract class
+
+
+Properties of Abstract class
+    *)Object cant be created 
+    exam: MobileUser m;(invalid)
+    *)We can create pointer and reference 
+    of base abstract class points.
+    exam:MobileUser *m;
+    *)It can have constructor.

@@ -1,0 +1,116 @@
+Inheritence = উত্তরাধিকার 
+Parent class/Base Class/Super Class/Mother Class
+Child class/Derived class/Sub class/Dauther class
+
+#Inheritence : The process of obtaining the data members and functions from one class to another class is known as inhertence.
+
+Importance:
+    #code reusability 
+    #Application development time is less
+    #Application take less memory 
+    #Application execuation time is less.
+
+
+There are 5 types of inheritence in c++
+    1)Single inheritence 
+    2)Multilevel inheritence 
+    3)Hierarchical inheritance
+    4)Hybrid inheritence
+    5)Hybrid inheritence 
+
+
+1)Single inheritence 
+
+A<-B 
+In this sort of inheritence 
+one subclass inherit from one superclass.
+
+class A
+{
+    .........
+    .........
+};
+class B: public A
+{
+    .........
+    .........
+};
+
+2)Multilevel inheritence
+
+In this sort of inheritence the superclass 
+for one is the subclass for 
+one is the subclass for another.
+
+class A
+{
+    .....
+    .....
+};
+class B:public A
+{
+    .....
+    .....
+};
+class C:public B
+{
+    .....
+    .....
+};
+
+
+3)Hierarchical inheritance 
+
+A<-B
+A<-C 
+A<-D 
+
+IN this sort of inheritence multiple subclass derived from
+single superclass 
+
+class A 
+{
+    .....
+    .....
+};
+class B:public A
+{
+    .....
+    .....
+};
+class C:public A 
+{
+    .....
+    .....
+};
+
+4)Multiple inheritence 
+A<-B 
+A<-C 
+B<-D 
+C<-D 
+
+In multiple inheritence a class can 
+inherit more than one class.
+
+In this type of inheritence a single 
+child class can have multiple parent classes.
+
+
+5)Hybrid inheritence 
+Hybrid inheritence is a combination of more than one type 
+of inheritence.
+
+
+
+
+
+
+
+
+
+
+
+
+
+

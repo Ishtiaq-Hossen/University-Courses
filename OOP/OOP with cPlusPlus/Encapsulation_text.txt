@@ -1,0 +1,32 @@
+Access specifiers in c++
+1. public --> we can use it from outside
+2. private --> we can't use it from outside
+3. protected --> we will know about it at inheritance 
+
+
+#Private data will be hidden from other classes 
+and they can only be accessed through 
+public function of their current class.
+That is known as data hiding
+
+class Encap
+{
+    public:
+        int roll;
+        void display()
+        {
+            //-----
+        }
+    private:
+        string name;
+    protected:
+        float gpa;
+};
+
+#Encapsulation
+Encapsulation is process of 
+1. Combining variables and funcions in a single unit(class)
+2. Protecting data by declaring them as private
+
+//for accessing private things we will need setter & getter function
+

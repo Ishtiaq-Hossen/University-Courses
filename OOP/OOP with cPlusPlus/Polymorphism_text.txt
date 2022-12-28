@@ -1,0 +1,17 @@
+Polymorphism 
+=poly + morphism(2 Greek words)
+=many + forms
+
+
+Polymorphism has 2 type
+    1)Compile Time polymorphism 
+    2)Run time polymorphism
+
+1)Compiler time polymorphism/static (or early) binding.
+Example ->Function overloading 
+2)Runtime polymorphism/dynamic (or late) binding 
+Example ->Function overriding 
+
+
+
+
