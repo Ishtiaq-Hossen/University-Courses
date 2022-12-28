@@ -1,0 +1,26 @@
+What is an Exception?
+->An exception is a run time error.
+->An exception is an abnormal condition that arises in a code sequence at run time.
+
+
+-ArithmeticException
+-NullPointerException
+-StringIndexOutOfBoundException
+etc
+
+
+
+->The excepton hanling is one of the powerful mechanism to handle the runtime errors.
+
+=>Exception handling is managed by 5 keywords.
+1. try
+2. catch
+3. finally
+4. throw
+5. throw
+
+
+
+
+
+
