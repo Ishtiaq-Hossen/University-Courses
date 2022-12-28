@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="542.0" prefWidth="400.0" style="-fx-background-color: black;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="mainpkg.CalculatorTestController">
+   <children>
+      <Label fx:id="showOutput" layoutX="29.0" layoutY="73.0" prefHeight="64.0" prefWidth="333.0" style="-fx-border-color: blue; -fx-background-color: white;" text="    Format: a-b,a+b,a*b,a÷b" textFill="#141313">
+         <font>
+            <Font name="System Bold" size="22.0" />
+         </font></Label>
+      <Button layoutX="31.0" layoutY="157.0" mnemonicParsing="false" onAction="#nine" prefHeight="47.0" prefWidth="65.0" text="9">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Button>
+      <Button layoutX="31.0" layoutY="224.0" mnemonicParsing="false" onAction="#six" prefHeight="47.0" prefWidth="65.0" text="6">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Button>
+      <Button layoutX="122.0" layoutY="157.0" mnemonicParsing="false" onAction="#eight" prefHeight="47.0" prefWidth="65.0" text="8">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Button>
+      <Button layoutX="209.0" layoutY="157.0" mnemonicParsing="false" onAction="#seven" prefHeight="47.0" prefWidth="65.0" text="7">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Button>
+      <Button layoutX="298.0" layoutY="157.0" mnemonicParsing="false" onAction="#divide" prefHeight="47.0" prefWidth="65.0" style="-fx-background-color: blue;" text="÷" textFill="#ebe0e0">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Button>
+      <Button layoutX="122.0" layoutY="224.0" mnemonicParsing="false" onAction="#five" prefHeight="47.0" prefWidth="65.0" text="5">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Button>
+      <Button layoutX="209.0" layoutY="224.0" mnemonicParsing="false" onAction="#four" prefHeight="47.0" prefWidth="65.0" text="4">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Button>
+      <Button layoutX="298.0" layoutY="224.0" mnemonicParsing="false" onAction="#minus" prefHeight="47.0" prefWidth="65.0" style="-fx-background-color: yellow;" text="-">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Button>
+      <Button layoutX="31.0" layoutY="293.0" mnemonicParsing="false" onAction="#one" prefHeight="47.0" prefWidth="65.0" text="1">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Button>
+      <Button layoutX="122.0" layoutY="293.0" mnemonicParsing="false" onAction="#two" prefHeight="47.0" prefWidth="65.0" text="2">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Button>
+      <Button layoutX="209.0" layoutY="293.0" mnemonicParsing="false" onAction="#three" prefHeight="47.0" prefWidth="65.0" text="3">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Button>
+      <Button layoutX="298.0" layoutY="293.0" mnemonicParsing="false" onAction="#multiplication" prefHeight="47.0" prefWidth="65.0" style="-fx-background-color: orange;" text="x">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Button>
+      <Button layoutX="31.0" layoutY="369.0" mnemonicParsing="false" onAction="#zero" prefHeight="47.0" prefWidth="157.0" text="0">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Button>
+      <Button layoutX="209.0" layoutY="369.0" mnemonicParsing="false" onAction="#equal" prefHeight="47.0" prefWidth="65.0" style="-fx-background-color: Aquamarine;" text="=">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Button>
+      <Button layoutX="298.0" layoutY="369.0" mnemonicParsing="false" onAction="#plus" prefHeight="47.0" prefWidth="65.0" text="+">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Button>
+      <Button layoutX="117.0" layoutY="447.0" mnemonicParsing="false" onAction="#clear" prefHeight="47.0" prefWidth="157.0" style="-fx-background-color: #DB2D43;" text="Clear">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Button>
+      <Text fill="#e8e2e2" layoutX="97.0" layoutY="49.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ishtiaq Calculator">
+         <font>
+            <Font name="System Bold" size="25.0" />
+         </font>
+      </Text>
+   </children>
+</AnchorPane>
