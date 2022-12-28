@@ -1,0 +1,21 @@
+classTask01->
+Here I needed to take a student id,name,how many course completed, and the pogram will take 
+the individual course grade and will show the details.
+Note: User need to give course grade input like: A-,A,B,B+ .....etc 
+
+=================================================================================================
+
+classTask02->An fxml project based on polymorphism with abstract class
+in that fxml we need to give student ID,Research title ,Budget of that research and research start date & duration
+
+As here I didn't use filehandling 
+here I added a fakeDatabase in controller class
+also I need to validate the Reseracher ID for 3 digit 
+
+101->Valid
+1a1->Invalid
+1021->Invalid
+
+further you can see the project by running .
+
+

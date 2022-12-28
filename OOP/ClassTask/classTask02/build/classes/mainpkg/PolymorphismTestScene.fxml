@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="602.0" prefWidth="716.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="mainpkg.InheritanceTestSceneController">
+   <children>
+      <TextField fx:id="nameTextField" layoutX="151.0" layoutY="55.0">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </TextField>
+      <Label layoutX="58.0" layoutY="59.0" text="Enter Name:">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <DatePicker fx:id="dobDatePicker" layoutX="463.0" layoutY="63.0" prefHeight="25.0" prefWidth="173.0" />
+      <Label layoutX="370.0" layoutY="26.0" text="Enter Gender:">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="370.0" layoutY="66.0" text="Select DoB:">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Line endX="521.0" layoutX="159.0" layoutY="322.0" startX="-100.0" />
+      <Button layoutX="62.0" layoutY="271.0" mnemonicParsing="false" onAction="#addNewStudentButtonOnClick" prefHeight="30.0" prefWidth="261.0" text="Add new Student">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Button>
+      <Button layoutX="54.0" layoutY="336.0" mnemonicParsing="false" onAction="#showAllInstanceButtonOnClick" prefHeight="25.0" prefWidth="148.0" text="Show ALL instances">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Button>
+      <TextArea fx:id="outputTextArea" editable="false" layoutX="50.0" layoutY="378.0" prefHeight="200.0" prefWidth="622.0" style="-fx-background-color: aqua;" />
+      <Line endX="-100.0" endY="258.0" layoutX="479.0" layoutY="50.0" startX="-100.0" startY="120.0" />
+      <TextField fx:id="idTextField" layoutX="151.0" layoutY="18.0">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </TextField>
+      <Label layoutX="58.0" layoutY="22.0" text="Enter Id:">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <TextField fx:id="cgpaTextField" layoutX="151.0" layoutY="209.0">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </TextField>
+      <Label layoutX="58.0" layoutY="213.0" text="Enter Cgpa:">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="60.0" layoutY="104.0" text="Enter Dept:">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <ComboBox fx:id="deptComboBox" layoutX="153.0" layoutY="102.0" prefHeight="25.0" prefWidth="173.0" />
+      <Line endX="521.0" layoutX="159.0" layoutY="153.0" startX="-100.0" />
+      <Label layoutX="396.0" layoutY="217.0" text="Enter Desig:">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <TextField fx:id="salaryTextField" layoutX="489.0" layoutY="176.0">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </TextField>
+      <Label layoutX="396.0" layoutY="180.0" text="Enter Salary:">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Button layoutX="405.0" layoutY="271.0" mnemonicParsing="false" onAction="#addNewFacultyButtonOnClick" prefHeight="30.0" prefWidth="261.0" text="Add new Faculty">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Button>
+      <ComboBox fx:id="desigComboBox" layoutX="489.0" layoutY="221.0" prefHeight="25.0" prefWidth="173.0" />
+      <RadioButton mnemonicParsing="false" text="RadioButton" />
+      <RadioButton fx:id="maleRadioButton" layoutX="472.0" layoutY="24.0" mnemonicParsing="false" text="Male" />
+      <RadioButton fx:id="femaleRadioButton" layoutX="552.0" layoutY="24.0" mnemonicParsing="false" text="Female" />
+   </children>
+</AnchorPane>
