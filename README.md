@@ -1,2 +1,9 @@
 # University-Courses
-Here I will upload my practice code for university courses 
+
+---
+
+Here I will upload my practice code of my university courses
+Thank you
+---
+
+-*Ishtiaq Hossen*
